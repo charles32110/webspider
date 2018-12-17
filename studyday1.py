@@ -47,6 +47,6 @@ content_len = len(content)
 print(content_len)
 
 #顺便保存个html吧
-f1 = open('homepage.html','w')
+f1 = open('day1.html','w')
 f1.write(content)
 f1.close()
