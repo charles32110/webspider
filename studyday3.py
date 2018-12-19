@@ -22,10 +22,24 @@ response = urllib2.urlopen('http://python.org')
 data = response.read()
 print data
 print response.code
-'''
+
 def url_respon(url):
     resp = urllib2.urlopen(url)
     return resp.read()
 url = 'http://python.org'
 data = url_respon(url)
 print data
+
+'''
+
+#创建代理
+import urllib2
+
+proxy_handler = urllib2.ProxyHandler({"http": 'http://191.33.179.242:8080'})
+opener = urllib2.build_opener(proxy_handler)
+urllib2.install_opener(opener)
+headers = {'User-Agent':'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'}
+url = 'http://www.python.org/'
+req = urllib2.Request(url=url, headers=headers)
+result = opener.open(req)
+print result.read()
