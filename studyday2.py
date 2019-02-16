@@ -30,3 +30,5 @@ for i in url_dic.keys():
     file.write(i+content.encode('utf-8'))
     file.close()
     a = a + 1
+
+    

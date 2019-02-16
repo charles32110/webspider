@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*
 #threading learning，代码来自china_python
 import requests
-import Queue
+import queue
 import threading
 
 
 class testproxy():
     # 初始化参数
     def __init__(self):
-        self.url = 'http://www.baidu.com/'
-        self.ip_list_queue = Queue.Queue()  # 创建队列用于存储所有代理
-        self.proxy_queue = Queue.Queue()  # 创建存储有效代理
+        #self.url = 'http://www.baidu.com/'
+        self.url = 'https://mp.weixin.qq.com/s/A7g08Buu6_w70Ne-Vxq2Ow'
+        self.ip_list_queue = queue.Queue()  # 创建队列用于存储所有代理
+        self.proxy_queue = queue.Queue()  # 创建存储有效代理
 
     # 获取代理ip
     def get_ip(self):
@@ -67,4 +68,4 @@ if __name__ == '__main__':
     start = testproxy()
     start.run()
 
-
+#我们把最终可以使用的proxy就保存在proxy.txt中以备使用啦。

@@ -39,7 +39,7 @@ def get_content(url):
     resp = requests.get(url)
     return resp.text
 
-url = "http://python.org"
+url = "http://h5.magook.com/?from=bk#/imgr/magazine/639/450360/0"
 content = get_content(url)
 print(content)
 
